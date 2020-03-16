@@ -17,7 +17,7 @@ export default class Cart extends Component {
                     </div>
                 </div>
             )
-        })
+        });
 
         return (
             <>
@@ -28,6 +28,6 @@ export default class Cart extends Component {
                     selected={this.props.selected}
                 />
             </>
-        )
+        );
     }
 }

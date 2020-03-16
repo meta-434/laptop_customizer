@@ -41,28 +41,28 @@ class App extends Component {
     });
   };
 
+  // explicitly bind feature and newValue for updateFeature()
   render() {
-
     return (
         <div className="App">
           <Header />
           <main>
             <Customize
-                USCurrencyFormat={USCurrencyFormat}
                 selected={this.state.selected}
                 features={this.props.features}
+                USCurrencyFormat={USCurrencyFormat}
                 updateFeature={(feature, newValue) => this.updateFeature(feature, newValue)}
             />
             <section className="main__summary">
               <Cart
-                  USCurrencyFormat={USCurrencyFormat}
                   selected={this.state.selected}
+                  USCurrencyFormat={USCurrencyFormat}
               />
             </section>
           </main>
         </div>
     );
   }
-}
+};
 
 export default App;

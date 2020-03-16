@@ -16,4 +16,4 @@ export default class Total extends Component {
             </div>
         )
     }
-}
+};

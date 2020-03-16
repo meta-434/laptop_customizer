@@ -6,4 +6,4 @@ export default function Header() {
             <h1>ELF Computing | Laptops</h1>
         </header>
     );
-}
+};

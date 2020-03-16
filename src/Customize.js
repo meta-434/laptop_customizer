@@ -25,7 +25,7 @@ export default class Features extends Component {
                     </div>
                 )
             })
-
+            // feature = drilled down, mapped features object
             return (
                 <SelectionButton
                     featureHash={featureHash}
@@ -42,4 +42,4 @@ export default class Features extends Component {
             </form>
         )
     }
-}
+};
