@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import slugify from 'slugify';
-import SelectionButton from './SelectionButton';
 import CustomOption from "./CustomOption";
 
 export default class Features extends Component {
