@@ -1,39 +1,23 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
 import SelectionButton from './SelectionButton';
+import CustomOption from "./CustomOption";
 
 export default class Features extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         const features = Object.keys(this.props.features).map((feature, idx) => {
-            const featureHash = feature + '-' + idx;
-            const options = this.props.features[feature].map(item => {
-                const itemHash = slugify(JSON.stringify(item));
-
                 return (
-                    <div key={itemHash} className="feature__item">
-                        <input
-                            type="radio"
-                            id={itemHash}
-                            className="feature__option"
-                            name={slugify(feature)}
-                            checked={item.name === this.props.selected[feature].name}
-                            onChange={e => this.props.updateFeature(feature, item)}
+                    <CustomOption
+                        feature={feature}
+                        idx={idx}
+                        {...this.props}
                         />
-                        <label htmlFor={itemHash} className="feature__label">
-                            {item.name} ({this.props.USCurrencyFormat.format(item.cost)})
-                        </label>
-                    </div>
-                )
-            })
-            // feature = drilled down, mapped features object
-            return (
-                <SelectionButton
-                    featureHash={featureHash}
-                    feature={feature}
-                    options={options}
-                />
-            )
-        })
+                );
+        });
 
         return (
             <form className="main__form">
